@@ -18,12 +18,15 @@ class SportsTeamSpec < Minitest::Test
     assert_equal("Prince Charming", @team.coach)
   end
 
+  def test_add_player
+    assert_equal(3, @team.players.length)
+    @team.add_player("Snow White")
+    assert_equal(4, @team.players.length)
+  end
+
 end
 
   
-
-
-  # Create a method that adds a new player to the player's array.
 
   # Add a method that takes in a string of a player's name and checks to see if they are in the players array.
 
