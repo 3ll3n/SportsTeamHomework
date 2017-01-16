@@ -6,7 +6,7 @@ class SportsTeamSpec < Minitest::Test
 
   def setup
 
-    @team = SportsTeam.new("Disney Rovers", ["Jasmine", "Cinderella", "Belle"], "Ursula") 
+    @team = SportsTeam.new("Disney Rovers", ["Jasmine", "Cinderella", "Belle"], "Ursula", 0) 
   end
 
   def test_return_teamname
@@ -24,11 +24,13 @@ class SportsTeamSpec < Minitest::Test
     assert_equal(4, @team.players.length)
   end
 
+  def test_check_player_available
+    assert_equal(false, @team.check_player_available( "Captain Hook" ))
+    assert_equal(true, @team.check_player_available( "Cinderella" ))
+  end
+    
+
 end
 
-  
 
-  # Add a method that takes in a string of a player's name and checks to see if they are in the players array.
-
-  # Add a points property into your class that starts at 0.
   # Create a method that takes in whether the team has won or lost and updates the points property for a win.
