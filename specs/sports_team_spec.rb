@@ -28,9 +28,15 @@ class SportsTeamSpec < Minitest::Test
     assert_equal(false, @team.check_player_available( "Captain Hook" ))
     assert_equal(true, @team.check_player_available( "Cinderella" ))
   end
+
+  def test_team_result_win
+    @team.record_result(true)
+    assert_equal(1, @team.points())
+  end
+
+  def test_team_result_lose
+    @team.record_result(false)
+    assert_equal(0, @team.points())
+  end
     
-
 end
-
-
-  # Create a method that takes in whether the team has won or lost and updates the points property for a win.

@@ -26,4 +26,10 @@ class SportsTeam
     return false
   end
 
+  def record_result(win)
+    if win
+      return @points += 1
+    end
+  end 
+
 end
