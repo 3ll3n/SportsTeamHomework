@@ -10,5 +10,9 @@ class SportsTeam
 
   end
 
+  def add_player(player)
+    return @players.push(player)
+  end
+
 
 end
